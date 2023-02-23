@@ -33,7 +33,11 @@ body {
 	box-shadow: 5px 5px 10px #b2babe, -5px -5px 10px #f0fcff;
 	transition: .3s;
 }
+.btn:active{
+	box-shadow: 0 0 0;
+	transform: scale(.9);
 
+}
 .btn:nth-child(4){
 	background-color: tomato;
 	color: lightgreen;
