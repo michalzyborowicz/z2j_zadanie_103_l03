@@ -1,0 +1,78 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #333;
+	font-size: 3.6rem;
+	counter-reset: section;
+}
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	align-items: center;
+	gap: 20px 50px;
+	width: 50vw;
+	height: 60vh;
+	margin: 200px auto;
+}
+.btn {
+	height: 80px;
+	border-radius: 20px;
+	border: none;
+	text-align: center;
+	font-size: 0.4em;
+	background-color: #d1dbe0;
+	box-shadow: 5px 5px 10px #b2babe, -5px -5px 10px #f0fcff;
+	transition: .3s;
+}
+
+.btn:nth-child(4){
+	background-color: tomato;
+	color: lightgreen;
+	box-shadow: 5px 5px 10px #c80c28, -5px -5px 10px #d71139;
+}
+.btn:last-of-type{
+	background-color: goldenrod;
+	color: whitesmoke;
+	box-shadow: 5px 5px 10px #eed415, -5px -5px 10px #e0a608;
+}
+
+/* Pseudoelements */
+.row-1::before{
+	content: ''counter(section)'. ';
+	counter-increment: section;
+}
+.row-2::before{
+	content: ''counter(section, upper-roman)') ';
+	counter-increment: section;
+}.row-3::before{
+	content: '['counter(section)'] ';
+	counter-increment: section;
+}
+
+/* Hover action */
+.btn:hover {
+	box-shadow: 0 0 0;
+	background-color: #666;
+	color: whitesmoke;
+	cursor: pointer;
+	box-shadow: 5px 5px 10px #c80c28, -5px -5px 10px #d71139;
+}
+.btn:nth-child(4):hover{
+	background-color: lightgreen;
+	color: tomato;
+	box-shadow: 5px 5px 10px #78e446, -5px -5px 10px #8eee40;
+}
+.btn:last-of-type:hover{
+	background-color: whitesmoke;
+	color: goldenrod;
+	box-shadow: 5px 5px 10px #efecec, -5px -5px 10px #e2dfe0;
+}
